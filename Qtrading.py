@@ -127,9 +127,9 @@ def send_signal(context: CallbackContext):
 
             signal_status = "No Signal"
             if price_above_sma and price_was_below_sma and rsi_above_50 and rsi_was_below_50:
-                signal_status = "BUY SIGNAL"
-            elif price_below_sma and price_was_above_sma and rsi_below_50 and rsi_was_above_50:
                 signal_status = "SELL SIGNAL"
+            elif price_below_sma and price_was_above_sma and rsi_below_50 and rsi_was_above_50:
+                signal_status = "BUY SIGNAL"
 
             print(f"{pair_name:<8} → {signal_status}")
 
@@ -165,20 +165,20 @@ def send_signal(context: CallbackContext):
 
             # Send new signals
             if price_above_sma and price_was_below_sma and rsi_above_50 and rsi_was_below_50:
-                signal = f"🟢 *{pair_name}* Buy Signal\nPrice: {float(last_close):.4f}\nTime 3 min"
+                signal = f"🔴 *{pair_name}* Sell Signal\nPrice: {float(last_close):.4f}\nTime 3 min"
                 message = context.bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=signal, parse_mode=ParseMode.MARKDOWN)
                 active_signals[pair_name] = {
-                    'type': 'BUY',
+                    'type': 'SELL',
                     'price': float(last_close),
                     'time': current_time,
                     'message_id': message.message_id,
                     'message': signal
                 }
             elif price_below_sma and price_was_above_sma and rsi_below_50 and rsi_was_above_50:
-                signal = f"🔴 *{pair_name}* Sell Signal\nPrice: {float(last_close):.4f}\nTime 3 min"
+                signal = f"🟢 *{pair_name}* Buy Signal\nPrice: {float(last_close):.4f}\nTime 3 min"
                 message = context.bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=signal, parse_mode=ParseMode.MARKDOWN)
                 active_signals[pair_name] = {
-                    'type': 'SELL',
+                    'type': 'BUY',
                     'price': float(last_close),
                     'time': current_time,
                     'message_id': message.message_id,
