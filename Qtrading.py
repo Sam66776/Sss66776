@@ -1,7 +1,7 @@
 import yfinance as yf
 import pandas as pd
 import warnings
-from telegram.constants import ParseMode
+from telegram import ParseMode
 from telegram.ext import Updater, CommandHandler, CallbackContext
 
 # Suppress all warnings
