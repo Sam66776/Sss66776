@@ -10,7 +10,7 @@ pd.options.mode.chained_assignment = None
 
 # Bot settings
 TELEGRAM_BOT_TOKEN = ''
-TELEGRAM_CHAT_ID = 
+TELEGRAM_CHAT_ID = ''
 
 # Store active signals with persistence
 active_signals = {}
