@@ -1,1 +1,1 @@
-pip install yfinance numpy python-telegram-bot pandas python-telegram-bot[job-queue]
+ yfinance numpy python-telegram-bot pandas python-telegram-bot[job-queue]
