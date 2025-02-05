@@ -9,8 +9,8 @@ warnings.filterwarnings('ignore')
 pd.options.mode.chained_assignment = None
 
 # Bot settings
-TELEGRAM_BOT_TOKEN = '7657943178:AAFnbCDMNscA82HG3-c1dTaitSvIQupDNHI'
-TELEGRAM_CHAT_ID = -1002464759615
+TELEGRAM_BOT_TOKEN = '@'
+TELEGRAM_CHAT_ID = -@
 
 # Store active signals with persistence
 active_signals = {}
